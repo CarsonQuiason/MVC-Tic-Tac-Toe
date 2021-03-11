@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cqrqfdtictactoe.MainMenuController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a8a8a8" height="263.0" layoutX="17.0" layoutY="202.0" stroke="BLACK" strokeType="INSIDE" width="368.0" />
+      <Label fx:id="header" alignment="CENTER" layoutX="10.0" layoutY="148.0" prefHeight="45.0" prefWidth="383.0" text="Tic Tac Toe" textAlignment="CENTER" textFill="#545454">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="40.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="mainMenu" layoutX="29.0" layoutY="214.0" prefHeight="239.0" prefWidth="343.0">
+         <children>
+            <Button fx:id="viewStats" disable="true" layoutX="10.0" layoutY="145.0" mnemonicParsing="false" onAction="#checkStats" prefHeight="36.0" prefWidth="323.0" text="View Statistics">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="newGameBtn1" layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#startNewGame" prefHeight="36.0" prefWidth="323.0" text="New Game" textFill="#545454">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="loadGameBtn1" layoutX="10.0" layoutY="102.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="36.0" prefWidth="323.0" text="Load Game">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="saveGame" disable="true" layoutX="10.0" layoutY="189.0" mnemonicParsing="false" onAction="#saveGame" prefHeight="36.0" prefWidth="323.0" text="Save Game">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="playAgain" disable="true" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="36.0" prefWidth="323.0" text="Play Again">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="nameSelection" layoutX="40.0" layoutY="220.0" prefHeight="213.0" prefWidth="323.0" visible="false">
+         <children>
+            <TextField fx:id="player1Name" layoutX="36.0" layoutY="44.0" prefHeight="25.0" prefWidth="252.0" />
+            <TextField fx:id="player2Name" layoutX="36.0" layoutY="120.0" prefHeight="25.0" prefWidth="252.0" />
+            <Label layoutX="91.0" layoutY="14.0" text="Player 1's Name">
+               <font>
+                  <Font name="Trebuchet MS" size="20.0" />
+               </font></Label>
+            <Label fx:id="p2Label" layoutX="91.0" layoutY="94.0" text="Player 2's Name">
+               <font>
+                  <Font name="Trebuchet MS" size="20.0" />
+               </font></Label>
+            <Button fx:id="submitLoadName" layoutX="2.0" layoutY="169.0" mnemonicParsing="false" onAction="#submitLoadName" prefHeight="36.0" prefWidth="323.0" text="Submit" textFill="#545454" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="submitName" layoutX="37.0" layoutY="174.0" mnemonicParsing="false" onAction="#submitNewNames" prefHeight="25.0" prefWidth="252.0" text="Submit" visible="false" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="539.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="41.0" text="Back" visible="false" />
+      <AnchorPane fx:id="newGamePane" focusTraversable="true" layoutX="38.0" layoutY="240.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <Button layoutY="39.0" mnemonicParsing="false" onAction="#playHuman" prefHeight="36.0" prefWidth="323.0" text="Against Human">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="100.0" mnemonicParsing="false" onAction="#playBot" prefHeight="36.0" prefWidth="323.0" text="Against Bot">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label fx:id="gameSaveMsg" alignment="CENTER" layoutX="43.0" layoutY="465.0" prefHeight="17.0" prefWidth="323.0" text="Game Save Message" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <AnchorPane fx:id="selectP2NamePane" layoutX="38.0" layoutY="227.0" prefHeight="213.0" prefWidth="323.0" visible="false">
+         <children>
+            <Button layoutX="28.0" layoutY="146.0" mnemonicParsing="false" onAction="#submitP2Name" prefHeight="36.0" prefWidth="252.0" text="Submit" textFill="#545454">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="79.0" layoutY="38.0" text="Player 1 :">
+               <font>
+                  <Font name="Agency FB" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="selectP2Name" layoutX="154.0" layoutY="92.0" prefHeight="29.0" prefWidth="78.0" />
+            <Label layoutX="79.0" layoutY="92.0" text="Player 2:">
+               <font>
+                  <Font name="Agency FB" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="P1NameLabel" layoutX="154.0" layoutY="38.0" text="p1Name">
+               <font>
+                  <Font name="Agency FB" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="statsPane" layoutX="38.0" layoutY="227.0" prefHeight="213.0" prefWidth="323.0" visible="false">
+         <children>
+            <Label layoutX="94.0" text="Statistics" underline="true">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="winAmt" layoutX="94.0" layoutY="41.0" prefHeight="24.0" prefWidth="175.0" text="Win: ">
+               <font>
+                  <Font name="Agency FB" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lossAmt" layoutX="94.0" layoutY="75.0" prefHeight="24.0" prefWidth="175.0" text="Loss: ">
+               <font>
+                  <Font name="Agency FB" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="tieAmt" layoutX="94.0" layoutY="115.0" prefHeight="24.0" prefWidth="175.0" text="Tie: ">
+               <font>
+                  <Font name="Agency FB" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="winPerc" layoutX="94.0" layoutY="157.0" prefHeight="24.0" prefWidth="175.0" text="Win %:">
+               <font>
+                  <Font name="Agency FB" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="menuBackBtn" layoutX="179.0" layoutY="482.0" mnemonicParsing="false" onAction="#goBackToMenu" text="Back" visible="false" />
+      <Button fx:id="aboutBtn" layoutX="175.0" layoutY="482.0" mnemonicParsing="false" onAction="#goToAbout" text="About" />
+      <AnchorPane fx:id="aboutMePane" layoutX="39.0" layoutY="220.0" prefHeight="213.0" prefWidth="323.0" visible="false">
+         <children>
+            <Label layoutX="38.0" text="About Application" underline="true">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutY="34.0" text="Tic-Tac-Toe is a game where the objective is to get 3 in a row" />
+            <Label layoutX="99.0" layoutY="122.0" text="About Me" underline="true">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutY="51.0" prefHeight="45.0" prefWidth="325.0" text="Player's alternate turns until a win condition is met or there are no spots left to fill" textOverrun="CLIP" wrapText="true" />
+            <Label layoutY="68.0" />
+            <Label layoutX="1.0" layoutY="84.0" prefHeight="45.0" prefWidth="325.0" text="This application uses an  MVC achitechture to handle all of the logic" textOverrun="CLIP" wrapText="true" />
+            <Label layoutY="150.0" prefHeight="45.0" prefWidth="325.0" text="My name is Carson and I am a computer science student at the University of Missouri-Columbia" textOverrun="CLIP" wrapText="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" blendMode="DARKEN" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cqrqfdtictactoe.GameController">
+   <children>
+      <Group>
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8d8d8d" height="80.0" opacity="0.55" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8d8d8d" height="233.0" layoutY="365.0" opacity="0.55" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+            <Group>
+               <children>
+                  <Button fx:id="btn4" layoutX="81.0" layoutY="193.0" mnemonicParsing="false" onAction="#button4Pressed" prefHeight="75.0" prefWidth="75.0" text=" ">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn8" layoutX="164.0" layoutY="274.0" mnemonicParsing="false" onAction="#button8Pressed" prefHeight="75.0" prefWidth="75.0" text=" ">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn2" layoutX="164.0" layoutY="108.0" mnemonicParsing="false" onAction="#button2Pressed" prefHeight="75.0" prefWidth="75.0" text=" ">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn1" alignment="CENTER" contentDisplay="CENTER" layoutX="81.0" layoutY="108.0" mnemonicParsing="false" onAction="#button1Pressed" prefHeight="75.0" prefWidth="75.0">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="30.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btn3" layoutX="245.0" layoutY="108.0" mnemonicParsing="false" onAction="#button3Pressed" prefHeight="75.0" prefWidth="75.0" text=" ">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn6" layoutX="245.0" layoutY="193.0" mnemonicParsing="false" onAction="#button6Pressed" prefHeight="75.0" prefWidth="75.0" text=" ">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn9" layoutX="245.0" layoutY="274.0" mnemonicParsing="false" onAction="#button9Pressed" prefHeight="75.0" prefWidth="75.0" text=" ">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn7" layoutX="81.0" layoutY="274.0" mnemonicParsing="false" onAction="#button7Pressed" prefHeight="75.0" prefWidth="75.0" text=" ">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn5" layoutX="163.0" layoutY="193.0" mnemonicParsing="false" onAction="#button5Pressed" prefHeight="75.0" prefWidth="75.0" text=" ">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Group>
+            <Label fx:id="p1wl" alignment="CENTER" layoutX="47.0" layoutY="462.0" prefHeight="18.0" prefWidth="68.0" text="0-0-0" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="p1name" alignment="CENTER" layoutX="32.0" layoutY="421.0" prefHeight="36.0" prefWidth="98.0" text="Player1" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Agency FB Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label layoutX="181.0" layoutY="421.0" prefHeight="58.0" prefWidth="39.0" text="Vs" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="49.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorMsg" alignment="CENTER" layoutX="10.0" layoutY="565.0" prefHeight="26.0" prefWidth="381.0" text="Errror:" textAlignment="CENTER" textFill="RED" visible="false" />
+            <Label fx:id="p2name" alignment="CENTER" layoutX="271.0" layoutY="421.0" prefHeight="36.0" prefWidth="98.0" text="Player2" textFill="WHITE" underline="true" wrapText="true">
+               <font>
+                  <Font name="Agency FB Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="p2wl" alignment="CENTER" layoutX="283.0" layoutY="462.0" prefHeight="18.0" prefWidth="74.0" text="0-0-0" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerTurnLabel" alignment="CENTER" contentDisplay="TOP" layoutX="28.0" layoutY="11.0" prefHeight="58.0" prefWidth="346.0" text="PLAYER'S TURN" textAlignment="CENTER" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Agency FB Bold" size="47.0" />
+               </font>
+            </Label>
+            <Button fx:id="goToMenuBtn" layoutX="176.0" layoutY="524.0" mnemonicParsing="false" onAction="#goToMenu" text="Menu" visible="false" />
+            <Button fx:id="playAgainBtn" layoutX="165.0" layoutY="489.0" mnemonicParsing="false" onAction="#playAgain" text="Play again" visible="false" />
+         </children>
+      </Group>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
